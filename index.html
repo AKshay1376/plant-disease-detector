@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Disease Detector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand"><span class="brand-mark">🌿</span> PlantGuard AI</div>
+    <a href="https://github.com/AKshay1376/plant-disease-detector" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">AI-POWERED PLANT HEALTH</div>
+      <h1>Detect plant diseases<br /><span>from a leaf photo.</span></h1>
+      <p>Upload a clear image of a plant leaf and let the trained model analyze it for one of 38 supported plant conditions.</p>
+    </section>
+
+    <section class="card">
+      <label class="upload" id="dropZone">
+        <input id="imageInput" type="file" accept="image/png,image/jpeg,image/jpg" hidden />
+        <div id="uploadContent">
+          <div class="upload-icon">📸</div>
+          <h2>Drop your leaf image here</h2>
+          <p>or <strong>browse files</strong> · JPG, JPEG or PNG</p>
+        </div>
+        <img id="preview" alt="Leaf preview" hidden />
+      </label>
+      <button id="detectBtn" disabled>Analyze Leaf <span>→</span></button>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="result" class="result card" hidden>
+      <div class="result-head"><span class="badge">PREDICTION</span><span id="confidence"></span></div>
+      <h2 id="plantName">—</h2>
+      <p id="diseaseName">—</p>
+      <div id="recommendation" class="recommendation"></div>
+      <button id="resetBtn" class="secondary">Analyze another leaf</button>
+    </section>
+
+    <section class="features">
+      <div><span>⚡</span><strong>Fast</strong><small>Browser-based analysis</small></div>
+      <div><span>🎯</span><strong>38 classes</strong><small>Supported conditions</small></div>
+      <div><span>🔒</span><strong>Private</strong><small>Your image stays in your browser</small></div>
+    </section>
+  </main>
+
+  <footer>PlantGuard AI · For educational and agricultural decision-support use.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
